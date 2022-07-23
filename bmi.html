@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BMI Calculation</title>
+	<script type="text/javascript" src="vue.min.js"></script>
+	<script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+	<fieldset><legend style="text-align: center;height:30px;width: 120px;"><b>BMI Calculation</b></legend>
+		
+	<div id="app">
+		<fieldset style="width: 300px;height: 80px;"><legend><b>Yout Heights</b></legend>
+		<div class="form-group"> 
+			
+			<label for="exampleInputEmail"><b>Feets:</b></label>
+			<input style="height: 20px;" type="text" class="form-control" id="exampleInputEmail" v-model="feets" required>
+		</div><br>
+		<div class="form-group">
+			<label for="inches"><b>Inches:</b></label>
+			<input style="height: 20px;" type="text" name="" class="form-control" id="inches" v-model="inches">
+		</div>
+		</fieldset><br>
+		<div class="form-group">
+			<h2><b>Your Weights</b></h2>
+			<label for="weight"><b>Pounds:</b></label>
+			<input style="height: 20px;" type="text" name="weight" class="form-control" id="weight" v-model="weight">
+			
+		</div><br>
+		<button style="background-color: #009688;height: 28px;width: 100px;" type="submit" class="btn" v-on:click="bmiCalculation">Calculate</button><br><br>
+		<label for="bmi"><b>Your BMI:</b></label>
+		<input style="height: 20px;" type="text" name="bmi" id="bmi" v-model="bmi"><br><br>
+		<div class="mydiv" style="display: flex;">
+			<button style="background-color: blue;">Underweight(<18.5)</button>
+			<button style="background-color: green;">Normal(18.5-24.9)</button>
+			<button style="background-color: yellow;">Overweight(25-29.9)</button>
+			<button style="background-color: red">Obese(>30)</button>
+	</div>
+</div><br>
+
+</fieldset>
+<script src="bmi.js"></script>
+</body>
+</html>

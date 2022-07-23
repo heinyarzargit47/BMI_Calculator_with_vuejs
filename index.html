@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue in-browser</title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<script type="text/javascript" src="vue.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div id="app">
+				<h1>{{message}}</h1>
+				<img v-bind:src="img" alt="">
+				<p v-if="error">Error!</p>
+				<p v-else>No Error!</p>
+				<ul>
+					<li v-for="todo in todos">{{todo.text}}</li>
+				</ul>
+				<button v-on:click="reverseMessage" class="mb-3">Reverse Message</button>
+				<form>
+					<label>Name:</label>
+					<input type="text" name="name" v-model="username" class="form-control">
+					<p>{{username}}</p>
+				</form>
+			</div>
+			<script type="text/javascript">
+				var app = new Vue({
+					el: '#app',
+					data: {
+						message: 'Hello Vue',
+						img: '../photo/vue.png',
+						error: false,
+						todos: [
+						{text: 'Learn Javascript'},
+						{text: 'Learn Vue'},
+						{text: 'Build something awesome'}
+		
+						],
+						username:''
+					},
+					methods: {
+						reverseMessage(){
+							this.message = this.message.split('').reverse().join('')
+						}
+					}
+				})
+			</script>
+		</div>
+	</div>
+
+</body>
+</html>
